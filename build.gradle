@@ -22,6 +22,6 @@ shadowJar {
 
 jar {
 	manifest {
-		attributes('Main-Class': 'ProcessingGame.src.MainWrapper')
+		attributes('Main-Class': 'ProcessingGame.src.Applet')
 	}
 }

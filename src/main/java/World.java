@@ -1,8 +1,6 @@
 package ProcessingGame.src;
 
 import processing.core.*;
-import java.net.URL;
-import java.io.*;
 
 public class World {
 	Applet m;
@@ -27,30 +25,8 @@ public class World {
 		// Generate A House at 2/2
 		world[2][2] = HOUSE;
 		// Load graphics for tiles
-		load_image("Grass", GRASS);
-		load_image("House", HOUSE);
-	}
-
-	private void load_image(String image, int tile) {
-		try {
-			byte[] buffer = new byte[1024];
-			int read;
-			File tempFile = File.createTempFile("app", ".png");
-			InputStream in = getClass().getResourceAsStream("/"
-				+ image + ".png");
-			OutputStream out = new FileOutputStream(tempFile);
-
-			while((read = in.read(buffer)) != -1) {
-				out.write(buffer, 0, read);
-			}
-			in.close();
-			out.close();
-			// Load the image.
-			img[tile] = m.loadImage(tempFile.toPath().toString());
-		} catch ( Exception e) {
-			System.out.println("Couldn't load image " + image);
-			System.exit(-1);
-		}
+		img[GRASS] = m.load_png("grass");
+		img[HOUSE] = m.load_png("house");
 	}
 
 	public void loop() {

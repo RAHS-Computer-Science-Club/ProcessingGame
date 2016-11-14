@@ -12,12 +12,7 @@ public class LivingBeing {
 		m = app;
 		x = xx;
 		y = yy;
-		try {
-			img = m.loadImage(image);
-		} catch ( Exception e) {
-			System.out.println("Couldn't find image " + image);
-			System.exit(-1);
-		}
+		img = m.load_png(image);
 	}
 
 }

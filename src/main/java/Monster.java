@@ -7,7 +7,7 @@ public class Monster extends LivingBeing {
 	boolean right = false;
 
 	public Monster(Applet app) {
-		super(app, 0, 0, "Giant.png");
+		super(app, 0, 0, "giant");
 	}
 
 	public void loop(Player player) {
