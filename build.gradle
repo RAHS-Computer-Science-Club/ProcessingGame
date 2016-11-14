@@ -1,0 +1,27 @@
+// Apply the java plugin to add support for Java
+plugins {
+	id 'com.github.johnrengelman.shadow' version '1.2.4'
+	id 'java'
+}
+
+repositories {
+	flatDir {
+		dirs 'src/libs'
+	}
+}
+
+dependencies {
+	compile name: 'core'
+}
+
+shadowJar {
+	baseName = 'game'
+	classifier = null
+	version = null
+}
+
+jar {
+	manifest {
+		attributes('Main-Class': 'ProcessingGame.src.MainWrapper')
+	}
+}
