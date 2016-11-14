@@ -38,8 +38,8 @@ public class Applet extends PApplet {
 	// This function runs every frame-game logic & rendering happens in here
 	private void on_frame() {
 		world.loop();
-		player.loop();
 		monster.loop(player);
+		player.loop();
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class Applet extends PApplet {
 	}
 
 	public void settings() {
-		size(640, 480);
+		size(960, 540);
 		logo = load_png("rahscs_logo");
 	}
 
@@ -59,7 +59,7 @@ public class Applet extends PApplet {
 		switch(loading) {
 			case 0:
 				textSize(32);
-				background(255,127,0);
+				background(0,127,0);
 				on_frame();
 				break;
 			case 1:
